@@ -11,6 +11,9 @@ import org.hibernate.cfg.Configuration;
  * Date  :  2017/5/9.
  */
 public class TestMain {
+
+
+
     public static void main(String[] args) {
         //读取配置
         Configuration conf = new Configuration().configure();
@@ -20,7 +23,7 @@ public class TestMain {
         Session session = sf.openSession();
         Transaction tsc = session.beginTransaction();
         //开始操作！
-        Customer customer = new Customer();
+        Customer customer;
         //赋值
         /*customer.setCustName("第一啊！");
         customer.setCustMobile("13666666");

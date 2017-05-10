@@ -7,6 +7,26 @@
     <class name="hib.domian.Customer" table="customer" schema="user">
         <id name="custId">
             <column name="cust_id" sql-type="bigint(32)"/>
+
+            <!-- 主键生成策略
+
+                increment:  (一般在测试的时候使用)有hibernate负责逐渐增长的策略，
+                    每次保存之前贤惠查找表中id的最大值，
+                    然后会在最大值基础上+1作为新的逐渐值。
+                identity:主键自增，有数据库来负责主键值生成，与hibernate 无关
+                sequence:序列，Oracle使用
+                hilo:高低位算法。适用于既不支持自增也不支持序列的库，还想要做到主键自增的效果
+                native:identity | sequence | hilo  自动三选一
+
+                前边五个都需要主键是数字类型
+
+                uuid:主键类型必须是字符串，使用uuid算出随机的字符串作为主键id
+
+
+
+                assigned:由我们指定id值，纯手打  不打就给你报错~~~~~~~~~~~~~~~~~
+            -->
+            <generator class="native"></generator>
         </id>
         <property name="custName">
             <column name="cust_name" sql-type="varchar(32)" length="32"/>

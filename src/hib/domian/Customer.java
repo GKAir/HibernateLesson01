@@ -11,7 +11,7 @@ import javax.persistence.Id;
  */
 @Entity
 public class Customer {
-    private long custId;
+    private Long custId;
     private String custName;
     private String custSource;
     private String custIndustry;
@@ -20,11 +20,11 @@ public class Customer {
 
     @Id
     @Column(name = "cust_id", nullable = false)
-    public long getCustId() {
+    public Long getCustId() {
         return custId;
     }
 
-    public void setCustId(long custId) {
+    public void setCustId(Long custId) {
         this.custId = custId;
     }
 

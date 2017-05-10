@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="hib.domian.Customer" table="customer" schema="user">
+        <id name="custId">
+            <column name="cust_id" sql-type="bigint(32)"/>
+        </id>
+        <property name="custName">
+            <column name="cust_name" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="custSource">
+            <column name="cust_source" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="custIndustry">
+            <column name="cust_industry" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="custLevel">
+            <column name="cust_level" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="custMobile">
+            <column name="cust_mobile" sql-type="varchar(16)" length="16" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
